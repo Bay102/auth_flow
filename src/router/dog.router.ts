@@ -5,7 +5,7 @@ import { validateRequest } from "zod-express-middleware";
 import { z } from "zod";
 import { intParseableString as intParseableString } from "../zod/parseableString.schema";
 
-const dogController = Router();
+const dogController = Router(); //> none
 // TODO
 // Needs ______?
 dogController.get("/dogs", async (req, res) => {
@@ -15,7 +15,7 @@ dogController.get("/dogs", async (req, res) => {
 
 // TODO
 // Needs ______?
-dogController.post(
+dogController.post(  //> authorization 
   "/dogs",
   validateRequest({
     body: z.object({
@@ -55,7 +55,7 @@ dogController.post(
 
 // TODO
 // Needs ______?
-dogController.patch(
+dogController.patch(  //> Authentication & Authorization ? if not just authen 
   "/dogs/:dogId",
   validateRequest({
     body: z
@@ -101,8 +101,8 @@ dogController.patch(
 );
 
 // TODO
-// Needs _____?
-dogController.delete(
+// Needs ____
+dogController.delete(  //> Authorization  - already authenticated 
   "/dogs/:dogId",
   validateRequest({
     params: z.object({
